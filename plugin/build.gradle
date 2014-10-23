@@ -1,5 +1,5 @@
 apply plugin: 'groovy'
-apply plugin: 'nexus'
+apply plugin: 'com.bmuschko.nexus'
 
 dependencies {
     compile gradleApi()
