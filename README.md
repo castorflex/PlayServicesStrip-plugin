@@ -28,7 +28,7 @@ Here are the supported packages:
 
 ```
 ads
-analytics:
+analytics
 actions
 appindexing
 appstate
