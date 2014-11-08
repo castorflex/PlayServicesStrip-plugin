@@ -6,6 +6,7 @@ class PlayServicesStripExtension {
 
     String[] includes = []
     String[] excludes = []
+    boolean shouldStrip = true;
 
     boolean getHasConfig() {
         includes.length > 0 || excludes.length > 0

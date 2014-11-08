@@ -31,6 +31,12 @@ class PlayServicesStripPlugin implements Plugin<Project> {
             if (extension == null) {
                 throw new IllegalArgumentException("No playservices configurations found for plugin playservicesstrip")
             }
+            
+            // skip work if the plugin isn't enabled.
+            if (!extension.shouldStrip) {
+                return;
+            }
+            
             extension.checkConfig()
 
             Configuration runtimeConfiguration = project.configurations.getByName('compile')
