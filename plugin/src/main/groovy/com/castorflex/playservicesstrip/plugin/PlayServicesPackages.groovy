@@ -45,7 +45,7 @@ class PlayServicesPackages {
             auth: Package.auth,
             cast: Package.cast,
             common: Package.common,
-            drive: Package.ads,
+            drive: Package.drive,
             dynamic: Package.dynamic,
             fitness: Package.fitness,
             games: Package.games,
