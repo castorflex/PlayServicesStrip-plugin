@@ -11,7 +11,7 @@ Add the plugin to your classpath, apply the plugin (after the android gradle plu
 
 ```groovy
 dependencies {
-	classpath 'com.github.castorflex.playservicesstrip:plugin:1.0.1'
+	classpath 'com.github.castorflex.playservicesstrip:plugin:1.0.2'
 }
 
 apply plugin: 'com.android.application'
