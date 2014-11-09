@@ -36,9 +36,13 @@ class PlayServicesStripPlugin implements Plugin<Project> {
             Configuration runtimeConfiguration = project.configurations.getByName('compile')
             ResolutionResult resolution = runtimeConfiguration.incoming.resolutionResult
             // Forces resolve of configuration
-            ModuleVersionIdentifier module = resolution.getAllComponents().find {
+            def component = resolution.getAllComponents().find {
                 it.moduleVersion.name.equals("play-services")
-            }.moduleVersion
+            }
+            if (component == null) {
+                throw new RuntimeException("You must add play services dependency if you want to use playservicesstrip plugin")
+            }
+            ModuleVersionIdentifier module = component.moduleVersion
             String prepareTaskName = "prepare${toCamelCase("${module.group} ${module.name} ${module.version}")}Library"
             Task prepareTask = project.tasks.findByName(prepareTaskName)
             File playServiceRootFolder = prepareTask.explodedDir
